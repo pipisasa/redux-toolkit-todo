@@ -1,0 +1,30 @@
+.addForm{
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.addInp{
+  background-color: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  margin: 10px 0;
+  padding: 5px 10px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.myBtn{
+  width: 50%;
+  border: 1px solid #FFF;
+  background-color: transparent;
+  color: #FFF;
+  padding: 10px;
+  cursor: pointer;
+  transition: .2s;
+}
+.myBtn:hover{
+  background-color: #FFF;
+  color: black;
+}
