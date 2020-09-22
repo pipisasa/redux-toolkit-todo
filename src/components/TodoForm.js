@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import {connect} from 'react-redux';
+
 import { addTodo } from '../redux/actions';
 
 import styles from './TodoForm.module.css';
@@ -29,7 +30,6 @@ export class TodoForm extends Component {
   }
   
   render() {
-    console.log(this.props)
     return (
       <div>
         <form className={styles.addForm} onSubmit={this.handleSubmit}>

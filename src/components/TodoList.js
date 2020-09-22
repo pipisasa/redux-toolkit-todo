@@ -2,11 +2,10 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import TodoItem from './TodoItem'
 
-function TodoList(props) {
+function TodoList() {
   const state = useSelector((state)=>{
     return state.todo;
   });
-  console.log(state);
 
   return (
     <div>
@@ -15,9 +14,6 @@ function TodoList(props) {
           <TodoItem 
             key={item.id + "-list-item"} 
             item={item}
-            changeStatus={props.changeStatus}
-            deleteTodo={props.deleteTodo}
-            editTodo={props.editTodo}
           />
         ))}
       </ul>
