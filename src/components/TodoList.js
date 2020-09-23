@@ -1,6 +1,6 @@
-import Axios from 'axios';
 import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchData } from '../redux/actions';
 import TodoItem from './TodoItem'
 
 function TodoList() {
@@ -8,12 +8,15 @@ function TodoList() {
     return state.todo;
   });
 
+  const dispatch = useDispatch();
+
   useEffect(()=>{
-    Axios.get(process.env.REACT_APP_API_URL + "/people")
-      .then(({data})=>{
-        console.log(data)
-      })
-  },[]);
+    dispatch(fetchData())
+  },[])
+
+  if(!state?.todos?.length){
+    return <h2>Your todo list is empty...</h2>
+  }
 
   return (
     <div>

@@ -6,7 +6,7 @@ import { addTodo } from '../redux/actions';
 
 import styles from './TodoForm.module.css';
 
-export class TodoForm extends Component {
+class TodoForm extends Component {
   state={
     text: ""
   }

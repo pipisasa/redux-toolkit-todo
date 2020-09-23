@@ -7,8 +7,8 @@
 
 .addInp{
   background-color: transparent;
-  border: 1px solid #FFF;
-  color: #FFF;
+  border: 1px solid #000;
+  color: #000;
   margin: 10px 0;
   padding: 5px 10px;
   font-size: 20px;
@@ -17,14 +17,14 @@
 
 .myBtn{
   width: 50%;
-  border: 1px solid #FFF;
+  border: 1px solid #000;
   background-color: transparent;
-  color: #FFF;
+  color: #000;
   padding: 10px;
   cursor: pointer;
   transition: .2s;
 }
 .myBtn:hover{
-  background-color: #FFF;
-  color: black;
+  background-color: #000;
+  color: #FFF;
 }
