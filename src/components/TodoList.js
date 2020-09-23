@@ -1,4 +1,5 @@
-import React from 'react'
+import Axios from 'axios';
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import TodoItem from './TodoItem'
 
@@ -6,6 +7,13 @@ function TodoList() {
   const state = useSelector((state)=>{
     return state.todo;
   });
+
+  useEffect(()=>{
+    Axios.get(process.env.REACT_APP_API_URL + "/people")
+      .then(({data})=>{
+        console.log(data)
+      })
+  },[]);
 
   return (
     <div>
