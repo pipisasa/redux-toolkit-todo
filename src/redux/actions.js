@@ -25,10 +25,11 @@ export const deleteTodo = (id)=>(dispatch)=>{
     })
 }
 
-export const editTodo = (todo)=>(dispatch)=>{
+export const editTodo = (todo, cb)=>(dispatch)=>{
   Axios.patch(process.env.REACT_APP_API_URL+"/todos/"+todo.id, todo)
     .then(()=>{
       dispatch(fetchData())
+      cb();
     })
     .catch(err=>{
       dispatch(fetchDataFailed(err))
@@ -39,7 +40,7 @@ export const fetchData = ()=> (dispatch)=>{
   dispatch({
     type: FETCH_DATA
   });
-  Axios.get(process.env.REACT_APP_API_URL+"/todos")
+  Axios.get(process.env.REACT_APP_API_URL+"/todos" + window.location.search)
     .then(response=>{
       const {data} = response;
       dispatch(fetchDataSuccess(data))

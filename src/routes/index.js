@@ -10,6 +10,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TodoList from '../components/TodoList';
 import TodoForm from '../components/TodoForm';
+import TodoDetails from '../redux/TodoDetails';
 
 export default function Routes() {
   return (
@@ -32,9 +33,10 @@ export default function Routes() {
           component={TodoForm}
         />
         <Route
-          path="/todo/:id"
-          component={()=>"На перерыв"}
-        />
+          path="/todos/:id"
+        >
+          <TodoDetails/>
+        </Route>
         <Route component={()=><h1>Error: 404</h1>}/>
       </Switch>
       <Footer/>

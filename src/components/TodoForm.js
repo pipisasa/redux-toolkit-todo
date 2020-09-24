@@ -16,7 +16,9 @@ class TodoForm extends Component {
     const todo = {
       id: Date.now(),
       title: this.state.text,
-      status: false
+      status: false,
+      createdAt: new Date().toJSON(),
+      updatedAt: new Date().toJSON(),
     };
     this.props.addTodo(todo);
     this.setState({

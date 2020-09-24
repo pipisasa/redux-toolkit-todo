@@ -36,7 +36,7 @@ html, body{
 
 .todo-list__item.checked{
   text-decoration: line-through;
-  color: #ffffff87;
+  color: #585858;
 }
 
 .todo-item__btn{

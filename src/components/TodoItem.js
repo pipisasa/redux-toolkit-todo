@@ -3,13 +3,16 @@
 
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { deleteTodo } from '../redux/actions';
+import { useHistory } from 'react-router-dom';
+import { deleteTodo, editTodo } from '../redux/actions';
 
 function TodoItem(props) {
   
   const [title, setTitle] = useState(props.item.title);
   const [isEdit, setEdit] = useState(false);
+  
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const classList = ["todo-list__item"];
   if(props.item.status){
@@ -32,23 +35,15 @@ function TodoItem(props) {
 
   const handleEditSubmit = (e)=>{
     e.preventDefault();
-    dispatch({
-      type: "EDIT_TODO",
-      payload: {
-        ...props.item,
-        title,
-      }
-    })
+    dispatch(editTodo({
+      ...props.item,
+      title,
+      updatedAt: new Date().toJSON(),
+    }));
     setEdit(false)
   }
   const handleChangeStatus = ()=>{
-    dispatch({
-      type: "EDIT_TODO",
-      payload: {
-        ...props.item,
-        status: !props.item.status,
-      }
-    })
+    history.replace("/todos/"+props.item.id);
   }
   const handleEditInput = (e)=>{
     setTitle(e.target.value);
