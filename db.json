@@ -5,21 +5,21 @@
       "title": "javascript",
       "status": true,
       "createdAt": "2020-09-24T09:44:13.785Z",
-      "updatedAt": "2020-09-24T09:44:33.996Z"
+      "updatedAt": "2021-02-06T05:24:43.153Z"
     },
     {
       "id": 1600940656017,
       "title": "react",
-      "status": false,
+      "status": true,
       "createdAt": "2020-09-24T09:44:16.017Z",
-      "updatedAt": "2020-09-24T09:44:16.018Z"
+      "updatedAt": "2021-02-06T05:46:52.309Z"
     },
     {
       "id": 1600940658268,
       "title": "redux",
-      "status": false,
+      "status": true,
       "createdAt": "2020-09-24T09:44:18.268Z",
-      "updatedAt": "2020-09-24T09:44:18.268Z"
+      "updatedAt": "2021-02-06T05:24:54.456Z"
     },
     {
       "id": 1600940662178,
@@ -36,11 +36,11 @@
       "updatedAt": "2020-09-24T09:44:25.343Z"
     },
     {
-      "id": 1600940670504,
-      "title": "react-router-dom",
+      "id": 1612589210842,
+      "title": "emir",
       "status": false,
-      "createdAt": "2020-09-24T09:44:30.504Z",
-      "updatedAt": "2020-09-24T09:44:30.504Z"
+      "createdAt": "2021-02-06T05:26:50.842Z",
+      "updatedAt": "2021-02-06T05:46:44.582Z"
     }
   ]
 }

@@ -33,17 +33,31 @@ function TodoItem(props) {
     setEdit(!isEdit)
   }
 
+  // const handleEditSubmit = (e)=>{
+  //   e.preventDefault();
+  //   dispatch(editTodo({
+  //     ...props.item,
+  //     title,
+  //     updatedAt: new Date().toJSON(),
+  //   }));
+  //   setEdit(false)
+  // }
+
+
   const handleEditSubmit = (e)=>{
     e.preventDefault();
     dispatch(editTodo({
-      ...props.item,
-      title,
-      updatedAt: new Date().toJSON(),
+      todo: {
+        ...props.item,
+        title,
+        updatedAt: new Date().toJSON(),
+      }
     }));
     setEdit(false)
   }
+
   const handleChangeStatus = ()=>{
-    history.replace("/todos/"+props.item.id);
+    history.push("/todos/"+props.item.id);
   }
   const handleEditInput = (e)=>{
     setTitle(e.target.value);

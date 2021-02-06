@@ -10,7 +10,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TodoList from '../components/TodoList';
 import TodoForm from '../components/TodoForm';
-import TodoDetails from '../redux/TodoDetails';
+import TodoDetails from '../components/TodoDetails';
 
 export default function Routes() {
   return (

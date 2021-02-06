@@ -1,11 +1,11 @@
-import Axios from 'axios';
 import React, { useCallback, useEffect, useState } from 'react'
+import Axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Button, Card, CardBody, Col, Container, Row } from 'reactstrap';
-import TodoList from '../components/TodoList';
+import TodoList from './TodoList';
 
 import { useDispatch } from 'react-redux';
-import { editTodo } from './actions';
+import { editTodo } from '../redux/actions';
 
 export default function TodoDetails() {
   const [data, setData] = useState(null);
@@ -36,12 +36,27 @@ export default function TodoDetails() {
       Error: {error.message}
     </h1>
   );
+
+  // const handleChangeStatus = ()=>{
+  //   dispatch(editTodo({
+  //     ...data,
+  //     status: !data.status,
+  //     updatedAt: new Date().toJSON(),
+  //   }, fetchDetails));
+  // }
+
+
   const handleChangeStatus = ()=>{
-    dispatch(editTodo({
+    const todo = {
       ...data,
       status: !data.status,
       updatedAt: new Date().toJSON(),
-    }, fetchDetails));
+    };
+
+    dispatch(editTodo({
+      todo, 
+      cb: fetchDetails
+    }));
   }
 
   return (
